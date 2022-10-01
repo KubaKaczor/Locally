@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".activities.EditProfileActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarOrderDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        >
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/editProfileToolbar"
+        android:layout_width="match_parent"
+        app:title="Edycja profilu"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/iv_profile_photo"
+        android:layout_width="@dimen/nav_image_size"
+        android:layout_height="@dimen/nav_image_size"
+        android:layout_marginStart="16dp"
+        android:contentDescription="@string/image_contentDescription"
+        android:src="@drawable/ic_user_place_holder"
+        app:civ_border_color="@android:color/darker_gray"
+        app:civ_border_width="@dimen/nav_image_circular_border_width"
+        app:layout_constraintBottom_toTopOf="@id/cvFormProfile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.469"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appBarOrderDetails" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvFormProfile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/authentication_screen_marginStartEnd"
+
+        android:layout_marginEnd="@dimen/authentication_screen_marginStartEnd"
+        android:elevation="@dimen/card_view_elevation"
+        app:cardCornerRadius="@dimen/card_view_corner_radius"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_profile_photo">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/card_view_layout_content_padding"
+            >
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/authentication_screen_til_marginStartEnd"
+                android:layout_marginEnd="@dimen/authentication_screen_til_marginStartEnd">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etProfileName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Imię"
+                    android:inputType="text"
+                    android:textSize="@dimen/et_text_size" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/authentication_screen_til_marginStartEnd"
+                android:layout_marginEnd="@dimen/authentication_screen_til_marginStartEnd">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etProfileLastname"
+                    android:layout_marginTop="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Nazwisko"
+                    android:inputType="textEmailAddress"
+                    android:textSize="@dimen/et_text_size" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/authentication_screen_til_marginStartEnd"
+                android:layout_marginEnd="@dimen/authentication_screen_til_marginStartEnd">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etProfileTelephone"
+                    android:layout_marginTop="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Telefon"
+                    android:inputType="number"
+                    android:textSize="@dimen/et_text_size" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="@dimen/authentication_screen_til_marginStartEnd"
+                android:layout_marginEnd="@dimen/authentication_screen_til_marginStartEnd">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etProfileCity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:inputType="text"
+                    android:hint="Lokalizacja"
+                    android:textSize="@dimen/et_text_size" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnUpdateProfile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="ZAKTUALIZUJ"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/shape_button_rounded"
+                />
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

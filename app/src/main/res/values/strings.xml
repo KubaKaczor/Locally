@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Locally</string>
+    <string name="image_contentDescription">image</string>
+    <string name="nav_my_profile">Profil</string>
+    <string name="nav_sign_out">Wyloguj</string>
+    <string name="please_click_back_again_to_exit">Proszę kliknij jeszcze raz żeby wyjść</string>
+
+    <string name="google_maps_api_key">AIzaSyAQJohU1vM56ORs1wt2FCITSkzVDovOWf0</string>
+</resources>
